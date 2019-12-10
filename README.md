@@ -1,5 +1,5 @@
 # api
-|  发布日期 | 2019-12-01 |
+|  发布日期 | 2019-12-07 |
  | -- | -- |
  |  名称 | magic images |
  |  文件现状 | 已完成 |
@@ -8,7 +8,10 @@
  |  领头的开发者 |  刘主茵|
  |  领头的测试者 |  刘主茵 |
 # 价值主张设计：
-设计一款供用户美化图片的产品，主要提供三种功能。第一种是使用Face++无限天空api检测出图片中的天空部分并且置换为用户选择的其他天空背景图，从而美化图片制造更多可能性。第二种是使用Face++的人脸美颜和人物抠像功能将图片中的人物独立出来并且进行自然美颜，然后供用户添加自己喜欢的背景图进行二次创作。第三种是使用Face++的人脸融合api让用户可以选择两张脸进行合成，提供趣味性。
+设计一款供用户美化图片的产品，让用户可以二次创作图片，为图片置换背景、融合图像等，主要提供三种功能。
+第一种是使用Face++无限天空api检测出图片中的天空部分并且置换为用户选择的其他天空背景图，从而美化图片制造更多可能性。
+第二种是使用Face++的人脸美颜和人物抠像功能将图片中的人物独立出来并且进行自然美颜，然后供用户添加自己喜欢的背景图进行二次创作。
+第三种是使用Face++的人脸融合api让用户可以选择两张脸进行合成，提供趣味性。
 ## （一）加值宣言：
 1. Face++无限天空，精准语义分割，全自动天空替换，支持蓝天白云、彩虹、星空、极光等各种天空替换，适应各种场景和多种素材。
 2. Face++人脸美颜api可以基于高精度的人脸关键点，实现贴合脸型的智能美颜，并且能根据不同光照场景实现自然的美颜效果。
@@ -32,37 +35,105 @@
 | 用户案例	| 对应标题	| 重要程度 |
 | -- | -- | -- |
 | 一个18岁的女生想要和朋友的相片合成，看看合成后的样貌	| Face++通过人脸融合生成两人面孔合成后的长相	|高  |
-| 	| Face++人脸美颜为其进行自然美艳	|  中|
-| 毕业生想回忆学校的场所并以文字记载相应的故事| 高德JS api将绘制学校3D地图供毕业生浏览叠加文字信息  |高|
+| 一个女士想要为自己拍的家庭照换一个更好看的背景	| Face++通过人物抠像并美颜后供用户选择背景进行置换	|  中|
+| 一个女士想分享一张花草的风景照但是图中的天空太暗沉影响美观| 使用Face++无限天空置换图中的天空  |低|
 
 ### 具体应用场景
-毕业后，翻看毕业册怀念曾经的大学生活，点击观看曾经在校园照下的照片和学校的场景。
+1. 用户认为图片有缺陷想要修改
+2. 用户想要改变照片中人物所处的背景
+3. 用户需要合成人像作创意制作
 ## （九）使用者交互与设计（axure产品原型）
 
 ## （十一）API的运用：
-1. Face++API：
+1. Face++人体抠像API：
 - 
-* 接口描述：
-* 接口地址：
-* 请求方法：
+* 接口描述：识别传入图片中人体的完整轮廓，进行人形抠像。
+* 接口地址：https://api-cn.faceplusplus.com/humanbodypp/v2/segment
+* 请求方法：POST
 * 输入
 ```
-代码示例：
+代码示例：import urllib.request
+import urllib.error
+import time
+
+http_url = 'https://api-cn.faceplusplus.com/humanbodypp/v2/segment'
+key = "_jXbMw1QVFqVtk-adtYw7NAQqPB9BIQp"
+secret = "FtUxmlgjwcy8GRoIV9bXDpdZev****"
+filepath = r"Desktop/test.jpg"
+
+boundary = '----------%s' % hex(int(time.time() * 1000))
+data = []
+data.append('--%s' % boundary)
+data.append('Content-Disposition: form-data; name="%s"\r\n' % 'api_key')
+data.append(key)
+data.append('--%s' % boundary)
+data.append('Content-Disposition: form-data; name="%s"\r\n' % 'api_secret')
+data.append(secret)
+data.append('--%s' % boundary)
+fr = open(filepath, 'rb')
+data.append('Content-Disposition: form-data; name="%s"; filename=" "' % 'image_file')
+data.append('Content-Type: %s\r\n' % 'application/octet-stream')
+data.append(fr.read())
+fr.close()
+data.append('--%s' % boundary)
+data.append('Content-Disposition: form-data; name="%s"\r\n' % 'return_landmark')
+data.append('1')
+data.append('--%s' % boundary)
+data.append('Content-Disposition: form-data; name="%s"\r\n' % 'return_attributes')
+data.append(
+    "gender,age,smiling,emotion,skinstatus")
+data.append('--%s--\r\n' % boundary)
+
+for i, d in enumerate(data):
+    if isinstance(d, str):
+        data[i] = d.encode('utf-8')
+
+http_body = b'\r\n'.join(data)
+
+# build http request
+req = urllib.request.Request(url=http_url, data=http_body)
+
+# header
+req.add_header('Content-Type', 'multipart/form-data; boundary=%s' % boundary)
+
+try:
+    # post data to server
+    resp = urllib.request.urlopen(req, timeout=5)
+    # get response
+    qrcont = resp.read()
+    # if you want to load as json, you should decode first,
+    # for example: json.loads(qrount.decode('utf-8'))
+    print(qrcont.decode('utf-8'))
+except urllib.error.HTTPError as e:
+    print(e.read().decode('utf-8'))
 
 ```
 
-2. 菜谱API：
-* 接口描述：
-* 接口地址：
-* 请求方法：
-* 输入
-```
-代码示例：
+2. Face++人脸融合：
+- 
+* 接口描述：使用本 API，可以对模板图和融合图中的人脸进行融合操作。融合后的图片中将包含融合图中的人脸特征，以及模板图中的其他外貌特征与内容。返回值是一段 JSON，包含融合完成后图片的 Base64 编码。
+* 接口地址：https://api-cn.faceplusplus.com/imagepp/v1/mergeface
+* 请求方法：POST
+具体代码与上差异较小
 
-```
+3. Face++人脸美颜
+- 
+* 接口描述：对图片进行美颜和美白。
+* 接口地址：https://api-cn.faceplusplus.com/facepp/v1/beautify
+* 请求方法：POST
+具体代码与上差异较小
+
+4. Face++无限天空
+- 
+* 接口描述：置换图片中的天空
+* 接口地址：https://api-cn.faceplusplus.com/facepp/v1/
+* 请求方法：POST
+具体代码与上差异较小
+
+
 
 ## （十二）AI产品概率性：
-百度视觉技术的图像识别技术，有三大保证：
+Face++的图像识别技术，有三大保证：
 1.	
 2.	
 3.	

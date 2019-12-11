@@ -43,6 +43,7 @@
 2. 用户想要改变照片中人物所处的背景
 3. 用户需要合成人像作创意制作
 ## （九）使用者交互与设计（axure产品原型）-首页
+
 ![首页](https://gitee.com/NFUNM059/api-toend/raw/master/%E9%A6%96%E9%A1%B5.png)
 
 ## （十一）API的运用：
@@ -109,9 +110,13 @@ except urllib.error.HTTPError as e:
 
 ```
 * 成功后的后台返回
+
 ！[后台返回](https://gitee.com/NFUNM059/api-toend/raw/master/images/%E6%8A%A0%E5%83%8F%E6%88%90%E5%8A%9F.JPG)
+
 * 使用效果示例：
+
 ！[效果图](https://gitee.com/NFUNM059/api-toend/raw/master/images/%E6%95%88%E6%9E%9C%E5%9B%BE.jpg)
+
 2. Face++人脸融合：
 * 接口描述：使用本 API，可以对模板图和融合图中的人脸进行融合操作。融合后的图片中将包含融合图中的人脸特征，以及模板图中的其他外貌特征与内容。返回值是一段 JSON，包含融合完成后图片的 Base64 编码。
 * 接口地址：https://api-cn.faceplusplus.com/imagepp/v1/mergeface

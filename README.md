@@ -133,8 +133,8 @@ except urllib.error.HTTPError as e:
 
 * 测试后存在的问题
 
-![抠图问题图](https://gitee.com/NFUNM059/api-toend/raw/master/images/%E5%90%88%E6%88%90%E5%90%8E.JPG)
-** **
+![人脸问题](https://gitee.com/NFUNM059/api-toend/raw/master/images/%E5%90%88%E6%88%90%E5%90%8E.JPG)
+**可以看到如果人脸的选择的是不同性别的，无法选择以女性特征为主还是以男性特征，一些男性的特征较强融合后会有违和感，可以满足一部分用户的需求，但不能满足所有的用户 **
 
 3. Face++人脸美颜
 * 接口描述：对图片进行美颜和美白。

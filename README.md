@@ -116,7 +116,7 @@ except urllib.error.HTTPError as e:
 
 * 使用效果示例：
 
-![效果图](https://gitee.com/NFUNM059/api-toend/raw/master/images/%E6%95%88%E6%9E%9C%E5%9B%BE.jpg)
+![效果图](https://github.com/nfu3059/api-end/blob/master/%E6%95%88%E6%9E%9C%E5%9B%BE.jpg)
 
 * 测试后存在的问题
 

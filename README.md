@@ -54,7 +54,9 @@
 * 请求方法：POST
 * 输入
 ```
-代码示例：import urllib.request
+代码示例：
+
+import urllib.request
 import urllib.error
 import time
 
@@ -122,20 +124,16 @@ except urllib.error.HTTPError as e:
 
 ![抠图问题图](https://github.com/nfu3059/api-end/blob/master/%E4%BA%BA%E5%83%8F%E6%8A%A0%E5%9B%BE%E5%A4%B1%E8%B4%A5.jpg)
 
-** 可以看到因为图中还有出现其他人脸，因此它会将图片中所有的人像扣除，无法指定特定的人，因此需要用户选择背景无其他人的图片进行构图或者通过剪切将多余的人像清除**
+**可以看到因为图中还有出现其他人脸，因此它会将图片中所有的人像扣除，无法指定特定的人，因此需要用户选择背景无其他人的图片进行构图或者通过剪切将多余的人像清除 **
 
 2. Face++人脸融合：
 * 接口描述：使用本 API，可以对模板图和融合图中的人脸进行融合操作。融合后的图片中将包含融合图中的人脸特征，以及模板图中的其他外貌特征与内容。返回值是一段 JSON，包含融合完成后图片的 Base64 编码。
 * 接口地址：https://api-cn.faceplusplus.com/imagepp/v1/mergeface
 * 请求方法：POST
 具体代码与上差异较小
-* 使用效果示例：
-
-![效果图](https://gitee.com/NFUNM059/api-toend/raw/master/images/%E6%95%88%E6%9E%9C%E5%9B%BE.jpg)
-
 * 测试后存在的问题
 
-![人脸问题](https://gitee.com/NFUNM059/api-toend/raw/master/images/%E5%90%88%E6%88%90%E5%90%8E.JPG)
+![人脸问题](https://github.com/nfu3059/api-end/blob/master/%E5%90%88%E6%88%90%E5%90%8E.JPG)
 
 * 提高问题出现率的事件
 
@@ -163,12 +161,14 @@ except urllib.error.HTTPError as e:
 * 接口地址：https://api-cn.faceplusplus.com/facepp/v1/
 * 请求方法：POST
 具体代码与上差异较小
-
+* 使用效果
+![无限天空](https://github.com/nfu3059/api-end/blob/master/%E7%BD%AE%E6%8D%A2%E5%A4%A9%E7%A9%BA.JPG)
 
 
 ## （十二）AI产品概率性：
 Face++的图像识别技术，有三大优点：
 1.	准确
+
 全球领先的识别准确率， 经过各行业应用检验
 
 2. 快速

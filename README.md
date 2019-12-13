@@ -45,7 +45,7 @@
 3. 用户需要合成人像作创意制作
 ## （九）使用者交互与设计（axure产品原型）-首页
 
-![首页](https://gitee.com/NFUNM059/api-toend/raw/master/%E9%A6%96%E9%A1%B5.png)
+![首页](https://gitee.com/NFUNM059/api-toend/raw/master/%E9%A6%96%E9%A1%B5.png))https://gitee.com/NFUNM059/api-toend/raw/master/%E9%A6%96%E9%A1%B5.png)
 
 ## （十一）API的运用：
 1. Face++人体抠像API：
@@ -120,7 +120,7 @@ except urllib.error.HTTPError as e:
 
 * 测试后存在的问题
 
-![抠图问题图](https://gitee.com/NFUNM059/api-toend/raw/master/images/%E6%8A%A0%E5%83%8F%20%E6%9D%82%E7%89%A9.JPG)
+![抠图问题图](https://gitee.com/NFUNM059/api-toend/raw/master/images/%E6%95%88%E6%9E%9C%E5%9B%BE.jpg)
 
 ** 可以看到因为图中还有出现其他人脸，因此它会将图片中所有的人像扣除，无法指定特定的人，因此需要用户选择背景无其他人的图片进行构图或者通过剪切将多余的人像清除**
 2. Face++人脸融合：

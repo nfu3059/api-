@@ -45,7 +45,7 @@
 3. 用户需要合成人像作创意制作
 ## （九）使用者交互与设计（axure产品原型）-首页
 
-![首页](https://gitee.com/NFUNM059/api-toend/raw/master/%E9%A6%96%E9%A1%B5.png)
+![首页](https://raw.githubusercontent.com/nfu3059/api-end/master/%E9%A6%96%E9%A1%B5.png)
 
 ## （十一）API的运用：
 1. Face++人体抠像API：
@@ -112,7 +112,7 @@ except urllib.error.HTTPError as e:
 ```
 * 成功后的后台返回
 
-![后台返回](https://gitee.com/NFUNM059/api-toend/raw/master/images/%E6%8A%A0%E5%83%8F%E6%88%90%E5%8A%9F.JPG)
+![后台返回](https://raw.githubusercontent.com/nfu3059/api-end/master/%E6%8A%A0%E5%83%8F%E6%88%90%E5%8A%9F.JPG)
 
 * 使用效果示例：
 

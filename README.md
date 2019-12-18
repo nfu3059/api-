@@ -45,6 +45,7 @@
 6. 你觉得通过置换图片中的天空来增加图片美观度是可行的么？ 
 
 * 调研结果
+
 | 调研结果| 
 | -- |
 | 调查用户的图片软件的使用度为适中水平| 
@@ -182,6 +183,7 @@ except urllib.error.HTTPError as e:
 * 接口描述：对图片进行美颜和美白。
 * 接口地址：https://api-cn.faceplusplus.com/facepp/v1/beautify
 * 请求方法：POST
+* 测试时美颜的效果较为自然，美颜的痕迹较轻，但是人脸美观度得到的一定的提升，符合产品的需求定位
 
 4. Face++无限天空
 * 接口描述：置换图片中的天空
@@ -190,7 +192,8 @@ except urllib.error.HTTPError as e:
 * 使用效果
 
 ![无限天空](https://github.com/nfu3059/api-end/blob/master/%E7%BD%AE%E6%8D%A2%E5%A4%A9%E7%A9%BA.JPG)
-* 测试结果
+
+* 该产品还处于测试阶段，其功能稳定性较弱
 
 ## （十三）AI产品的对比：
 Face++的图像识别技术，有三大优点：

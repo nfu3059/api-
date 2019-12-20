@@ -70,12 +70,14 @@
 3. 用户需要合成人像作创意制作
 ## （十一）使用者交互与设计（axure产品原型）-首页
 * 产品架构
-![产品架构图]（https://github.com/nfu3059/api-end/blob/master/%E4%BA%A7%E5%93%81%E6%A1%86%E6%9E%B6%E5%9B%BE.png）
+
+![产品架构图](https://github.com/nfu3059/api-end/blob/master/%E4%BA%A7%E5%93%81%E6%A1%86%E6%9E%B6%E5%9B%BE.png）
 * 产品操作流程
 ![产品流程图](https://github.com/nfu3059/api-end/blob/master/%E4%BA%A7%E5%93%81%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 * APP界面图
 ![界面图](https://github.com/nfu3059/api-end/blob/master/%E9%A1%B5%E9%9D%A2_1.png)
-
+* 原型文档
+[原型链接]( http://nfunm059.gitee.io/magic-images)
 ## （十二）API的运用：
 1. Face++人体抠像API：
 * 接口描述：识别传入图片中人体的完整轮廓，进行人形抠像。

@@ -68,18 +68,32 @@
 1. 用户认为图片有缺陷想要修改
 2. 用户想要改变照片中人物所处的背景
 3. 用户需要合成人像作创意制作
-## （十一）使用者交互与设计（axure产品原型）-首页
+## （十一）使用者交互与设计（axure产品原型）
 * 产品架构
 
-![产品架构图](https://github.com/nfu3059/api-end/blob/master/%E4%BA%A7%E5%93%81%E6%A1%86%E6%9E%B6%E5%9B%BE.png)
+![产品架构图](https://github.com/nfu3059/api-end/blob/master/%E4%BA%A7%E5%93%81%E6%A1%86%E6%9E%B6%E5%9B%BE.jpg)
 
 * 产品操作流程
-![产品流程图](https://github.com/nfu3059/api-end/blob/master/%E4%BA%A7%E5%93%81%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
-* APP界面图
-![界面图](https://github.com/nfu3059/api-end/blob/master/%E9%A1%B5%E9%9D%A2_1.png)
-* 原型文档
+![产品流程图](https://github.com/nfu3059/api-end/blob/master/%E4%BA%A7%E5%93%81%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg)
 
-[原型链接]( http://nfunm059.gitee.io/magic-images)
+### 交互及界面设计
+* APP界面图
+![界面图](https://github.com/nfu3059/api-end/blob/master/%E6%80%BB%E9%A1%B5%E9%9D%A2.jpg)
+· 在magic首页中的人物照，使用Face++的人脸美颜和人物抠像功能将图片中的人物独立出来并且进行自然美颜，用户可以挑选背景直接进行二次创作。
+· 在magic首页中的风景照，使用Face++无限天空api检测出图片中的天空部分并且置换为用户选择的其他天空背景图。
+· 在magic首页中的人脸融合，使用Face++的人脸融合api使得用户可以选择两张脸进行人脸自然的融合。
+* 信息设计
+1. 主要功能
+![主要功能](https://github.com/nfu3059/api-end/blob/master/%E6%80%BB%E9%A1%B5%E9%9D%A2.jpg)
+2. 上传图片，一键合成
+![添加图片](https://github.com/nfu3059/api-end/blob/master/%E4%BA%BA%E7%89%A9%E7%85%A7.jpg)
+3. 分享效果图
+![分享图片](https://github.com/nfu3059/api-end/blob/master/%E4%BA%BA%E7%89%A9%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C.jpg)
+4. 发布内容
+![发布内容](https://github.com/nfu3059/api-end/blob/master/%E5%8F%91%E5%B8%83.jpg)
+
+* 原型文档
+[原型链接](http://nfunm059.gitee.io/magic-images)
 ## （十二）API的运用：
 1. Face++人体抠像API：
 * 接口描述：识别传入图片中人体的完整轮廓，进行人形抠像。
